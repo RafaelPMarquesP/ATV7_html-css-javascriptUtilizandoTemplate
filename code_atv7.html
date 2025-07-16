@@ -1,0 +1,179 @@
+# ATV7_html-css-javascriptUtilizandoTemplate
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dark Souls Central</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #f8f0c6;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #a38b2f;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #d4af37;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #f8f0c6;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        section {
+            padding: 40px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #444;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        form {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #d4af37;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #f7ce60;
+        }
+
+        footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 15px;
+        }
+    </style> 
+    <script>
+        function validarFormulario() {
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const mensagem = document.getElementById("mensagem").value.trim();
+
+            if (nome.length < 3 || nome.length > 50) {
+                alert("Nome deve ter entre 3 e 100 caracteres.");
+                return false;
+            }
+
+            if (email.length < 10 || email.length > 100) {
+                alert("Email deve ter entre 10 e 100 caracteres.");
+                return false;
+            }
+
+            if (mensagem.length < 10) {
+                alert("Mensagem muito curta.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Dark Souls Central</h1>
+        <p>Guia de sobrevivência e loja de itens para Escolhidos</p>
+    </header>
+
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#itens">Itens</a>
+        <a href="#contato">Contato</a>
+        <a href="https://en.bandainamcoent.eu/dark-souls/dark-souls" target="_blank" rel="esternal">Site oficial</a>
+    </nav>
+
+    <section id="sobre">
+        <h2>Sobre o Projeto</h2>
+        <div class="card">
+            <p>Somos uma comunidade dedicada a ajudar jogadores de Dark Souls a sobreviver ao mundo sombrio de Lordran.
+                Aqui você encontrará guias, itens essenciais e dicas para não enlouquecer (literalmente) durante sua
+                jornada como o Escolhido.</p>
+        </div>
+    </section>
+
+    <section id="itens">
+        <h2>Itens em Destaque</h2>
+        <div class="card">
+            <h3>Estus Flask</h3>
+            <p>Recupere sua vida e continue a luta. Essencial para qualquer build.</p>
+        </div>
+        <div class="card">
+            <h3>Zweihander</h3>
+            <p>Uma das armas mais poderosas do jogo, com escalonamento brutal.</p>
+        </div>
+        <div class="card">
+            <h3>Anel de Havel</h3>
+            <p>Aumenta drasticamente sua capacidade de carga. Perfeito para builds pesadas.</p>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Fale Conosco</h2>
+        <form onsubmit="return validarFormulario()" method="POST" action="https://formsubmit.co/seuemail@exemplo.com">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Dark Souls Central | Prepare to Die™</p>
+    </footer>
+    <marquee behavior = "right" direction = "">© 2025 Dark Souls Central | Prepare to Die™</marquee>
+</body>
+</html>
